@@ -26,6 +26,7 @@ try:
     option = int(input())
 except ValueError:
     print("Only nums are accept!")
+    option = 0
 
 def showlist(grade,name):
     for item in grade, name:
@@ -39,8 +40,8 @@ if option == 1:
 
     while True:
         if opt == 1:
-            updategrade = input(f"Insert your #{opt} note ")
-            if 0 >= updategrade >= 10:
+            updategrade = float(input(f"Insert your #{opt} note "))
+            if 0 <= updategrade <= 10:
                 print("Allowed.")
                 student["grade"][0] = updategrade
                 break
@@ -48,33 +49,34 @@ if option == 1:
                 print("Only notes between 0 and 10 are accept.")
         
         elif opt == 2:
-            updategrade = input(f"Insert your note #{opt}")
-            if 0 >= updategrade >= 10:
+            updategrade = float(input(f"Insert your note #{opt}"))
+            if 0 <= updategrade <= 10:
                 print("Allowed.")
                 student["grade"][1] = updategrade
                 break
             else:
                 print("Only nums between 0 and 10 are accept.")
         elif opt == 3:
-            updategrade = input(f"Insert your note #{opt}")
-            if 0 >= updategrade >= 10:
+            updategrade = float(input(f"Insert your note #{opt}"))
+            if 0 <= updategrade <= 10:
                 print("Allowed.")
-                student["grade"][1] = updategrade
+                student["grade"][2] = updategrade
                 break
             else:
-                print("Only nums between 0 and 10 are accept.")    
+                print("Only nums between 0 and 10 are accept.")
         
         else:
             student["grade"].clear()
             qty2 = int(input("How many notes do you want to add? "))
 
-            for n in range(qty):
+            for n in range(qty2):
                 while True:
 
                     grade2 = float(input(f"Insert your #{n + 1} note"))
 
-                    if 0 >= grade2 <= 10:
+                    if 0 <= grade2 <= 10:
                         grades.append(grade2)
                         break
                     else:
                         print("Only allowed notes between 0 and 10.")
+            break
