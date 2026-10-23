@@ -152,11 +152,3 @@ while True:
         print("Only numbers are accepted!")
 
 
-# *** ===== STOCK MANAGER =====
-# 1. Add product
-# 2. Show products
-# 3. Sell product
-# 4. Show sales report
-# 5. Exit
-
-# Choose an option:

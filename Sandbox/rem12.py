@@ -39,27 +39,42 @@ if option == 1:
 
     while True:
         if opt == 1:
-            grade[0] = float(input("Enter your note: "))
-            if grade[0] <= and <= 10:
+            updategrade = input(f"Insert your #{opt} note ")
+            if 0 >= updategrade >= 10:
                 print("Allowed.")
+                student["grade"][0] = updategrade
+                break
+            else:
+                print("Only notes between 0 and 10 are accept.")
+        
+        elif opt == 2:
+            updategrade = input(f"Insert your note #{opt}")
+            if 0 >= updategrade >= 10:
+                print("Allowed.")
+                student["grade"][1] = updategrade
                 break
             else:
                 print("Only nums between 0 and 10 are accept.")
-        
-        elif opt == 2:
-            grade[1] = float(input("Enter your note: "))
-                    if grade[0] <= 0 and <= 10:
-                        print("Allowed.")
-                        break
-                    else:
-                        print("Only nums between 0 and 10 are accept.")
         elif opt == 3:
-            grade[1] = float(input("Enter your note: "))
-                    if grade[0] <= 0 and <= 10:
-                        print("Allowed.")
+            updategrade = input(f"Insert your note #{opt}")
+            if 0 >= updategrade >= 10:
+                print("Allowed.")
+                student["grade"][1] = updategrade
+                break
+            else:
+                print("Only nums between 0 and 10 are accept.")    
+        
+        else:
+            student["grade"].clear()
+            qty2 = int(input("How many notes do you want to add? "))
+
+            for n in range(qty):
+                while True:
+
+                    grade2 = float(input(f"Insert your #{n + 1} note"))
+
+                    if 0 >= grade2 <= 10:
+                        grades.append(grade2)
                         break
                     else:
-                        print("Only nums between 0 and 10 are accept.")
-        else:
-            student.pop("grade")
-
+                        print("Only allowed notes between 0 and 10.")
